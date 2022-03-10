@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: BUPT535xxq
+    url: jdbc:mysql://116.62.52.154:3306/xxq?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8080
+  http-port: 80
+  ssl:
+    enabled: true
+    key-store: classpath:tomcat_https.keystore
+    key-store-type: JKS
+    key-alias: tomcat_https
+    key-password: BUPT535xxq
+    key-store-password: BUPT535xxq

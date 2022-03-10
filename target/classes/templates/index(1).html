@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin</title>
+		<!-- Bootstrap core CSS -->
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link th:href="@{/css/signin.css}" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+	<div>
+		<form class="form-signin" th:action="@{/user/login}">
+			<img class="mb-4" th:src="@{/img/bupt.png}" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			<p style="color: #ff0000" th:text = "${password_message}" th:if = "${not #strings.isEmpty(password_message)}"></p>
+			<label class="sr-only">Username</label>
+			<input type="text" name = "username" class="form-control" placeholder="Username" required="" autofocus="">
+			<label class="sr-only">Password</label>
+			<input type="password" name = "password" class="form-control" placeholder="Password" required="">
+			<div class="checkbox mb-3">
+				<label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+		</form>
+		<form class="form-signin" th:action="@{/register.html}">
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Come to register</button>
+			<p class="mt-5 mb-3 text-muted">© 2021-2022</p>
+            <a class="btn btn-sm">中文</a>
+            <a class="btn btn-sm">English</a>
+		</form>
+
+
+
+
+	</div>
+	</body>
+</html>

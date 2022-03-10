@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>ChangeName</title>
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<div>
+  <form class="form-signin" th:action="@{/user/changeName}">
+    <img class="mb-4" th:src="@{/img/bupt.png}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Rename</h1>
+    <p style="color: #00ff00" th:text = "${change_name_message}" th:if = "${not #strings.isEmpty(change_name_message)}"></p>
+    <label class="sr-only">Usename</label>
+    <input type="text" name = "username_change" class="form-control" placeholder="Username" required="">
+    <!--			<div class="checkbox mb-3">-->
+    <!--				<label>-->
+    <!--          <input type="checkbox" value="remember-me"> Remember me-->
+    <!--        </label>-->
+    <!--			</div>-->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Rename</button>
+  </form>
+  <form class="form-signin" th:action="@{/main.html}">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Return to main</button>
+  </form>
+</div>
+<!--		<form class="form-signin" th:action="@{/index.html}">-->
+<!--			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>-->
+<!--		</form>-->
+</body>
+
+</html>
